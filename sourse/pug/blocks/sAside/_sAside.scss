@@ -3,6 +3,9 @@
 	.sAside {
 		border-left: 1px solid #EAEEEF;
 		border-right: none;
+		@include media-breakpoint-up(lg) {
+			z-index: auto;
+		}
 		z-index: 9999;
 			.toggle-menu-mobile {
 				// position: relative;
