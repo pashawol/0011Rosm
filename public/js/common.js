@@ -1,15 +1,11 @@
 "use strict";
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
 	btnToggleMenuMobile: [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js")),
-	menuMobile: document.querySelector(".menu-mobile--js"),
+	menuMobile: document.querySelector(".sAside"),
 	menuMobileLink: [].slice.call(document.querySelectorAll(".menu-mobile--js ul li a")),
 	modalCall: function modalCall() {
 		$(".link-modal").fancybox({
@@ -31,6 +27,12 @@ var JSCCommon = {
 					// ZOOM: "Zoom"
 
 				}
+			},
+			eforeLoad: function eforeLoad() {
+				document.querySelector("html").classList.add("ficed");
+			},
+			afterClose: function afterClose() {
+				document.querySelector("html").classList.remove("ficed");
 			}
 		});
 		$(".modal-close-js").click(function () {
@@ -98,7 +100,7 @@ var JSCCommon = {
 		if (this.menuMobileLink) {
 			this.toggleMenu();
 			document.addEventListener('mouseup', function (event) {
-				var container = event.target.closest(".menu-mobile--js.active"); // (1)
+				var container = event.target.closest(".sAside.active"); // (1)
 
 				if (!container) {
 					_this2.closeMenu();
@@ -142,65 +144,21 @@ var JSCCommon = {
 		// });
 	},
 	// /табы
-	inputMask: function inputMask() {
-		// mask for input
-		var InputTel = [].slice.call(document.querySelectorAll('input[type="tel"]'));
-		InputTel.forEach(function (element) {
-			element.setAttribute("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}");
-		});
-		Inputmask("+9(999)999-99-99").mask(InputTel);
-	},
+	// inputMask() {
+	// 	// mask for input
+	// 	let InputTel = [].slice.call(document.querySelectorAll('input[type="tel"]'));
+	// 	InputTel.forEach(function (element) {
+	// 		element.setAttribute("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}")
+	// 	});
+	// 	Inputmask("+9(999)999-99-99").mask(InputTel);
+	// },
 	// /inputMask
 	ifie: function ifie() {
 		var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 
 		if (isIE11) {
-			$("body").prepend('<p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p>');
+			$("body").after('<div class="browsehappy">	<p class=" container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p></div>');
 		}
-	},
-	sendForm: function sendForm() {
-		var gets = function () {
-			var a = window.location.search;
-			var b = new Object();
-			var c;
-			a = a.substring(1).split("&");
-
-			for (var i = 0; i < a.length; i++) {
-				c = a[i].split("=");
-				b[c[0]] = c[1];
-			}
-
-			return b;
-		}(); // form
-
-
-		$("form").submit(function (e) {
-			e.preventDefault();
-			var th = $(this);
-			var data = th.serialize();
-			th.find('.utm_source').val(decodeURIComponent(gets['utm_source'] || ''));
-			th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || ''));
-			th.find('.utm_medium').val(decodeURIComponent(gets['utm_medium'] || ''));
-			th.find('.utm_campaign').val(decodeURIComponent(gets['utm_campaign'] || ''));
-			$.ajax({
-				url: 'action.php',
-				type: 'POST',
-				data: data
-			}).done(function (data) {
-				$.fancybox.close();
-				$.fancybox.open({
-					src: '#modal-thanks',
-					type: 'inline'
-				}); // window.location.replace("/thanks.html");
-
-				setTimeout(function () {
-					// Done Functions
-					th.trigger("reset"); // $.magnificPopup.close();
-					// ym(53383120, 'reachGoal', 'zakaz');
-					// yaCounter55828534.reachGoal('zakaz');
-				}, 4000);
-			}).fail(function () {});
-		});
 	},
 	heightwindow: function heightwindow() {
 		// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
@@ -238,12 +196,10 @@ var $ = jQuery;
 function eventHandler() {
 	var _defaultSl;
 
+	JSCCommon.ifie();
 	JSCCommon.modalCall();
 	JSCCommon.tabscostume('tabs');
 	JSCCommon.mobileMenu();
-	JSCCommon.inputMask();
-	JSCCommon.ifie();
-	JSCCommon.sendForm();
 	JSCCommon.heightwindow();
 	JSCCommon.animateScroll(); // JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
@@ -257,7 +213,15 @@ function eventHandler() {
 	} // /добавляет подложку для pixel perfect
 
 
-	function whenResize() {}
+	function whenResize() {
+		var topH = $("header ").innerHeight();
+
+		if ($(window).scrollTop() > topH) {
+			$('.top-nav  ').addClass('fixed');
+		} else {
+			$('.top-nav  ').removeClass('fixed');
+		}
+	}
 
 	window.addEventListener('resize', function () {
 		whenResize();
@@ -282,14 +246,14 @@ function eventHandler() {
 		// }
 
 	}), _defaultSl);
-	var swiper4 = new Swiper('.sBanners__slider--js', _objectSpread(_objectSpread({}, defaultSl), {}, {
+	var breadSl = new Swiper('.nav-slider', {
 		slidesPerView: 'auto',
+		spaceBetween: 10,
 		freeMode: true,
-		loopFillGroupWithBlank: true,
-		touchRatio: 0.2,
-		slideToClickedSlide: true,
-		freeModeMomentum: true
-	})); // modal window
+		freeModeMomentum: true,
+		// spaceBetween: 30, 
+		watchOverflow: true
+	}); // modal window
 }
 
 ;

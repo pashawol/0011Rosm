@@ -1,0 +1,57 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'title'
+	title= title
+block pagecontent
+	.py-5.container
+		.row
+			.col-5.mb-3
+				.display-4 Typography
+			.col.mb-3
+				h1 h1, .h1 -  PT Root 40B
+				h2 h2, .h2 -  PT Root 30B
+				h3 h3, .h3 -  PT Root 24B 
+				h4 h4, .h4 -  PT Root 20B
+				h5 h5, .h5 -  PT Root 12B  
+				p  базовый размер шрифта - 16px
+				p .p2 - PT Root 14N
+				.small- small, .small - PT Root 12N
+	.py-5.container
+		.row
+			.col-5.mb-3
+				.display-4 Buttons
+			.col.mb-3
+				.row
+					.col-6
+						button.btn.btn-block.btn-primary(type="submit") Primary
+						button.btn.btn-block.btn-success(type="submit") Success
+						button.btn.btn-block.btn-teal(type="submit") Outline-teal
+						button.btn.btn-block.btn-primary.disabled(type="submit") Primary disabled
+						button.btn.btn-block.btn-success.disabled(type="submit") Success disabled
+						button.btn.btn-block.btn-teal.disabled(type="submit") Outline-teal disabled
+					.col-6
+						button.btn.btn-block.btn-outline-primary(type="submit") Outline-primary
+						button.btn.btn-block.btn-outline-teal(type="submit") Outline-teal
+						button.btn.btn-block.btn-outline-primary.disabled(type="submit") Outline-primary disabled
+						button.btn.btn-block.btn-outline-teal.disabled(type="submit") Outline-teal disabled
+	.py-5.container
+		.row
+			.col-5.mb-3
+				.display-4 Forms
+			.col.mb-3
+				.row
+					.col-6
+						.form-group
+							input.form-control.form-control-lg(type="text" placeholder="form-control-lg")
+						.form-group
+							input.form-control(type="text" placeholder="form-control")
+						.form-group
+							input.form-control.form-control-sm(type="text" placeholder="form-control-sm")
+					.col-6

@@ -1,6 +1,14 @@
+// @extend .form-group;
 .form-wrap{
+	&__body{
+		padding: 1rem rem(25);
+	}
+	&__footer{
+		padding: 1rem rem(25);
+		border-top: 1px solid #DDE2E5;
+	}
+
  	&__input-wrap{
-			// @extend .form-group;
 			
 		}
 		&__input{
@@ -9,7 +17,9 @@
 		 resize: none;
  	}
  	&__btn{
- 		cursor: pointer;
+		 cursor: pointer;
+		 @extend .btn;
+		 margin-bottom: 1rem;
  	}
  	label{
  		width: 100%;

@@ -1,0 +1,53 @@
+mixin sStartSection()
+	// start sStartSection
+	+b.MAIN.sStartSection.section#sStartSection&attributes(attributes) 
+		.container 
+			.row
+				+e.col.col.d-flex.flex-column
+					+e.text-block.text-white.mb-auto
+						h1.strong Форма M1
+						p Форма федерального статистического наблюдения N&nbsp;1-молодежь &laquo;Сведения о&nbsp;сфере государственной молодежной политики&raquo;
+					div
+						img(src="img/svg/logo-text.svg" loading="lazy", alt="")
+				+e.col.col-md-auto
+					+form-wrap
+						+e.body
+							.h3.strong.pb-2 Вход в&nbsp;систему
+							+input("Логин")
+							+input("Пароль")
+							+e.btn.btn-success(type="submit") Войти
+						+e.footer.small #[a.strong.text-body(href="#") Не знаете как войти?] Получите данные у администратора системы
+	// end sStartSection
+mixin sStartSection1(t='Начните заполнение данных в форме М1')
+	// start sStartSection
+	+b.MAIN.sStartSection.section#sStartSection&attributes(attributes) 
+		.container 
+			.row.align-items-center
+				+e.col.col.d-flex.flex-column
+					+b.form-wrap
+						+e.body
+							.h3.strong.pb-5= t
+							+e.btn.btn-success(href="#") Начать заполнение  
+				+e.col.col-md-auto
+					+e.text-block.text-white.mb-auto 
+						p Давно выяснено, что при оценке дизайна и&nbsp;композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает
+						ul.small
+							li более или менее стандартное 
+							li заполнение шаблона, а&nbsp;также реальное распределение букв и&nbsp;пробелов 
+							li в&nbsp;абзацах, которое не&nbsp;получается 
+							li при простой дубликации &laquo;Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст..&raquo; 
+							li Многие программы электронной вёрстки и&nbsp;редакторы HTML используют Lorem Ipsum
+						a.btn.btn-outline-white.btn-block(href="#") Скачать инструкцию
+	// end sStartSection
+mixin sStartSection3(t='Начните заполнение данных в форме М1')
+	// start sStartSection
+	+b.MAIN.sStartSection.section#sStartSection&attributes(attributes) 
+		.container 
+			.row.align-items-center.justify-content-center
+				+e.col.col-auto
+					+b.form-wrap
+						+e.body
+							.h3.strong Спасибо ваша форма принята к&nbsp;рассмотрению, результат проверки мы&nbsp;вышлем на&nbsp;вашу почту
+							a.h6.text-body(href="#") Начать заполнение  
+			 
+	// end sStartSection

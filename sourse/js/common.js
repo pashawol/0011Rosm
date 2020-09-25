@@ -1,7 +1,7 @@
 const JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
 	btnToggleMenuMobile: [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js")),
-	menuMobile: document.querySelector(".menu-mobile--js"),
+	menuMobile: document.querySelector(".sAside"),
 	menuMobileLink: [].slice.call(document.querySelectorAll(".menu-mobile--js ul li a")),
 
 	modalCall() {
@@ -25,6 +25,12 @@ const JSCCommon = {
 					// SHARE: "Share",
 					// ZOOM: "Zoom"
 				},
+			},
+			eforeLoad: function () {
+				document.querySelector("html").classList.add("ficed")
+			},
+			afterClose: function () {
+				document.querySelector("html").classList.remove("ficed")
 			},
 		});
 		$(".modal-close-js").click(function () {
@@ -86,7 +92,7 @@ const JSCCommon = {
 		if (this.menuMobileLink) {
 			this.toggleMenu();
 			document.addEventListener('mouseup', (event) => {
-				let container = event.target.closest(".menu-mobile--js.active"); // (1)
+				let container = event.target.closest(".sAside.active"); // (1)
 				if (!container) {
 					this.closeMenu();
 				}
@@ -132,14 +138,14 @@ const JSCCommon = {
 	},
 	// /табы
 
-	inputMask() {
-		// mask for input
-		let InputTel = [].slice.call(document.querySelectorAll('input[type="tel"]'));
-		InputTel.forEach(function (element) {
-			element.setAttribute("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}")
-		});
-		Inputmask("+9(999)999-99-99").mask(InputTel);
-	},
+	// inputMask() {
+	// 	// mask for input
+	// 	let InputTel = [].slice.call(document.querySelectorAll('input[type="tel"]'));
+	// 	InputTel.forEach(function (element) {
+	// 		element.setAttribute("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}")
+	// 	});
+	// 	Inputmask("+9(999)999-99-99").mask(InputTel);
+	// },
 	// /inputMask
 	ifie() {
 		var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
@@ -148,50 +154,7 @@ const JSCCommon = {
 
 		}
 	},
-	sendForm() {
-		var gets = (function () {
-			var a = window.location.search;
-			var b = new Object();
-			var c;
-			a = a.substring(1).split("&");
-			for (var i = 0; i < a.length; i++) {
-				c = a[i].split("=");
-				b[c[0]] = c[1];
-			}
-			return b;
-		})();
-		// form
-		$("form").submit(function (e) {
-			e.preventDefault();
-			const th = $(this);
-			var data = th.serialize();
-			th.find('.utm_source').val(decodeURIComponent(gets['utm_source'] || ''));
-			th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || ''));
-			th.find('.utm_medium').val(decodeURIComponent(gets['utm_medium'] || ''));
-			th.find('.utm_campaign').val(decodeURIComponent(gets['utm_campaign'] || ''));
-			$.ajax({
-				url: 'action.php',
-				type: 'POST',
-				data: data,
-			}).done(function (data) {
-
-				$.fancybox.close();
-				$.fancybox.open({
-					src: '#modal-thanks',
-					type: 'inline'
-				});
-				// window.location.replace("/thanks.html");
-				setTimeout(function () {
-					// Done Functions
-					th.trigger("reset");
-					// $.magnificPopup.close();
-					// ym(53383120, 'reachGoal', 'zakaz');
-					// yaCounter55828534.reachGoal('zakaz');
-				}, 4000);
-			}).fail(function () { });
-
-		});
-	},
+ 
 	heightwindow() {
 		// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
 		let vh = window.innerHeight * 0.01;
@@ -228,9 +191,7 @@ function eventHandler() {
 	JSCCommon.ifie();
 	JSCCommon.modalCall();
 	JSCCommon.tabscostume('tabs');
-	JSCCommon.mobileMenu();
-	JSCCommon.inputMask();
-	JSCCommon.sendForm();
+	JSCCommon.mobileMenu(); 
 	JSCCommon.heightwindow();
 	JSCCommon.animateScroll();
 
@@ -285,16 +246,13 @@ function eventHandler() {
 		},
 	}
 
-	const swiper4 = new Swiper('.sBanners__slider--js', {
-		// slidesPerView: 5,
-		...defaultSl,
+	var breadSl = new Swiper('.nav-slider', {
 		slidesPerView: 'auto',
+		spaceBetween: 10,
 		freeMode: true,
-		loopFillGroupWithBlank: true,
-		touchRatio: 0.2,
-		slideToClickedSlide: true,
 		freeModeMomentum: true,
-
+		// spaceBetween: 30, 
+		watchOverflow: true,
 	});
 	// modal window
 

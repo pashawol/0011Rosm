@@ -420,3 +420,41 @@ img.img-bg,
 iframe {
 	border: none;
 }
+
+.p{
+	font-size: rem(18);
+}
+.p2{
+	font-size: rem(14);
+}
+
+.btn-primary{
+	color: #ffffff !important;
+}
+.btn{
+	font-weight: bold;
+}
+.btn-outline-success,
+.btn-outline-teal,
+.btn-outline-primary { 
+ 
+	&.disabled{
+		pointer-events: none;
+		border-color: #ACB5BD;
+		color: #ACB5BD;
+	}
+}
+body{
+	// color: #ffffff;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+
+.main-block{
+		@include media-breakpoint-up(lg){
+
+			position: relative; 
+		}
+
+}

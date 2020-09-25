@@ -1,7 +1,37 @@
 
 	// start .topLine
+	body{
+		&:not(.bg-success) {
+			.topLine{
+				svg{
+					[stroke='white']{
+						stroke: $success !important;
+					}
+				}
+			}
+		}
+	}
 	.topLine {
-		 
+		padding-top: rem(14);
+		padding-bottom: rem(14);
+		.row{
+			align-items: center;
+		}
+		.btn{
+
+			width: rem(160);
+		}
+		 .dropdown-toggle{
+			 text-align: left;
+			 &.btn{
+				 display: flex;
+				 justify-content: space-between;
+				 align-items: center;
+			 }
+			 &::after{
+				 margin-left: auto;
+			 }
+		 }
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

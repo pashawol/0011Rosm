@@ -1,0 +1,54 @@
+mixin sAsideBody(t)
+	// start sAside
+	+b.sAside#sAside&attributes(attributes)
+		+b.toggle-menu-mobile--js.d-lg-none
+			span
+		+e.inner
+			+e.group.d-lg-none
+				a.btn.btn-outline-success.btn-block.mb-3(href="#") Инструкция 
+				.dropdown
+					button#dropdownMenuButton.btn.btn-teal.btn-block.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')  Виктор К.
+					.dropdown-menu(aria-labelledby='dropdownMenuButton')
+						a.dropdown-item(href='#') Action
+						a.dropdown-item(href='#') Another action
+						a.dropdown-item(href='#') Something else here
+			+e.head
+				.h6.strong.mb-0= t
+			block
+
+	// end sAside
+mixin sAside()
+	+sAsideBody('Общие данные по Разделу 1')
+		mixin gr(t,t1,t2,t3,t4)
+			+e.group
+				if t
+					.text-secondary.mb-3= t
+				+e.group-item
+					.small.mb-1= t1
+					.h6.strong= t2
+				if t3
+					+e.group-item
+						.small.mb-1= t3
+						.h6.strong= t4
+		+gr("Объем финансирования","Бюджет субъекта РФ","25 000 000 руб.","Местный бюджет","5 000 000 руб.")
+		+gr("Гранты физ. и юр. лицам","Количество выданных грантов","150 шт.","Объем грантовых средств","552 000 000 руб.")
+		+gr("","Численность молодежи, зедействованной в программных мероприятиях по всем направлениям","150 000 чел.")
+		+gr("","Количество детских и молодежных общественных объединений, всего","150 ")
+		
+mixin sAside5()
+	+sAsideBody('Общие данные по Разделу 1')
+		mixin gr(t,t1,t2,t3,t4)
+			+e.group
+				if t
+					.text-secondary.mb-3= t
+				+e.group-item
+					.small.mb-1= t1
+					.h6.strong= t2
+				if t3
+					+e.group-item
+						.small.mb-1= t3
+						.h6.strong= t4
+		+gr("Объем финансирования","Бюджет субъекта РФ","25 000 000 руб.","Местный бюджет","5 000 000 руб.")
+		+gr("Гранты физ. и юр. лицам","Количество выданных грантов","150 шт.","Объем грантовых средств","552 000 000 руб.")
+		+gr("","Численность молодежи, зедействованной в программных мероприятиях по всем направлениям","150 000 чел.")
+		+gr("","Количество детских и молодежных общественных объединений, всего","150 ")

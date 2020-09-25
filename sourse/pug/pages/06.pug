@@ -4,15 +4,21 @@ extends layout/main.pug
 include ../blocks/sContent/_sContent.pug
 include ../blocks/sContact/_sContact.pug
 include ../blocks/sStartSection/_sStartSection.pug
+include ../blocks/sTable/_sTable.pug
+include ../blocks/sAside/_sAside.pug
 
 block variables
-	- let  mainPage= 'bg-success'
+	- let  mainPage= null
 block title
-	- let  title= 'Форма M1'
+	- let  title= 'Таблица'
 	title= title
 block pagecontent
-	+topLine()
-	+sStartSection
+	+topLine('t')
+	+top-nav()
+	.main-block
+		.container-fluid
+			+sTable
+			+sAside5
 	+footer()
 
 
