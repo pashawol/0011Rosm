@@ -12,7 +12,7 @@
 		
 		.row{
 			// --bs-gutter-x: 12px;
-			@include roww(12px);
+			@include roww(10px);
 		}
 		&__inner{ 
 			min-width: rem(830);
@@ -47,8 +47,8 @@
 			}
 		}
 		&__th{
-			font-size: rem(11);
-			padding-top: rem(13);
+			font-size: rem(10);
+			padding-top: rem(15);
 			padding-bottom: rem(15);
 		}
 		&__td{
@@ -70,6 +70,16 @@
 		&__group-tr{
 			padding-bottom: rem(36);
 		}
+
+		 &__col {
+		 	width: 140px;
+
+		 	.form-group {
+				 position: relative;
+				//  width: rem(111);
+				 margin-left: auto;
+		 	}
+		 }
 		
 		@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}

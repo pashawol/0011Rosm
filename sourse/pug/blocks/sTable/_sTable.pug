@@ -3,6 +3,11 @@ mixin td(t, p)
 		input.form-control.form-control-sm(type="text" value= t placeholder="0")&attributes(attributes)
 		+e.after-text= p
 	// /+e.td.col.form-group
+mixin td2(t, p)
+	.form-group&attributes(attributes)
+		input.form-control.form-control-sm(type="text" value= t placeholder="0")&attributes(attributes)
+		+e.after-text= p
+	// /+e.td.col.form-group
 		
 mixin sTableBody(n)
 	// start sTable
@@ -111,18 +116,61 @@ mixin sTable5()
 						.col 300 000 р.
 						.col 300 000 р.
 						.col 300 000 р.
-		 
-			+e.group-tr
-				p.strong  31. Муниципальные структуры по работе с мололодежью, в том числе:
-			
-				+tr("32. муниципальные органы исполненительной власти")
-				+tr("33. Муниципальные бюджетные учреждения") 
-				+e.tr--total.strong.small
+			- for (var x = 0; x < 2; x++)
+				+e.group-tr
+					p.strong  31. Муниципальные структуры по работе с мололодежью, в том числе:
+				
+					+tr("32. муниципальные органы исполненительной власти")
+					+tr("33. Муниципальные бюджетные учреждения") 
+					+e.tr--total.strong.small
+						.row
+							.col 20 Ед.
+							.col 352 чел.
+							.col 200 чел.
+							.col 60 чел.
+							.col 300 000 р.
+							.col 300 000 р.
+							.col 300 000 р.
+mixin sTable6()
+	+sTableBody('next')
+		block
+		//- +e.head
+		//- 	.row
+		//- 		mixin title(t, t2)
+		//- 			+e.th.col(data-title= t2)!= t
+		//- 		+title(`Количество <br> структур`)
+		//- 		+title(`Всего <br> сотрудников`)
+		//- 		+title(`Количество <br> выданных грантов`)
+		//- 		+title(`Имеющих  <br> профильное обра...`)
+		//- 		+title(`Всего направлено <br> на работу...`)
+		//- 		+title(`Расходы на <br> организацию... `)
+		//- 		+title(`Расходы на выполнение...`)
+		//- 		+title(`Расходы на ремонт...`)
+		+e.body
+			mixin tr(t, t2, p)
+				+e.tr
 					.row
-						.col 20 Ед.
-						.col 352 чел.
-						.col 200 чел.
-						.col 60 чел.
-						.col 300 000 р.
-						.col 300 000 р.
-						.col 300 000 р.
+						.col
+								p.small= t
+						+e.col.col-auto
+							+td2(t2, p)
+			mixin gr(t, t2, p)
+				+e.group-tr
+					.row
+						.col
+							p.strong= t
+						+e.col.col-auto
+							+td2(t2, p)
+			- for (var x = 0; x < 4; x++)
+				+gr("34. Численность уникальных пользователей, посетивших сайт регионального органа испольнительной власти, реализующего государственную молодежную политику",'10','ЧЕЛ')
+			+e.group-tr
+				.row
+					.col
+						p.strong 38. Количество упоминаний регионального органа исполнительной власти, реализующего государственную молодежную политику, в том числе:
+					+e.col.col-auto
+						p.strong.text-right 20 Ед.
+				+tr("39. В печатных изданиях",'10','ЕД')
+				+tr("40. В интрнет СМИ",'5','ЕД')
+				+tr("41. ТВ сюжетов",'5','ЕД')
+			- for (var x = 0; x < 2; x++)
+				+gr("34. Численность уникальных пользователей, посетивших сайт регионального органа испольнительной власти, реализующего государственную молодежную политику",'10','ЧЕЛ')

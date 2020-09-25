@@ -91,7 +91,11 @@
 			padding: rem(17) rem(25);
 
 		}
-		 
+		 &__group-item{
+			 padding-bottom: 1rem;
+		 }
+ 
+		
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
