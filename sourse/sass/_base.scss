@@ -458,3 +458,29 @@ body{
 		}
 
 }
+
+.alert{
+	position: relative;
+	padding-right: rem(60);
+	display: flex;
+	align-items: center;
+	.icon{
+		font-size: rem(24); 
+		fill: transparent;
+		stroke: currentColor;
+		margin-right: rem(15);
+		flex: 0 0 auto;
+		stroke-width: 2px;
+	}
+
+	&__close{
+		cursor: pointer;
+		position: absolute;
+		right: rem(14);
+		top: rem(10);
+		.icon{ 
+			stroke: $body-color;
+			margin-right: 0;
+		}
+	}
+	}

@@ -254,6 +254,12 @@ function eventHandler() {
 		// spaceBetween: 30, 
 		watchOverflow: true
 	}); // modal window
+
+	$(function () {
+		$('[data-toggle="popover"]').popover({
+			trigger: 'hover'
+		});
+	});
 }
 
 ;

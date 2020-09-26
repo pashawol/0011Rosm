@@ -55,3 +55,40 @@ block pagecontent
 						.form-group
 							input.form-control.form-control-sm(type="text" placeholder="form-control-sm")
 					.col-6
+	.py-5.container
+		.row
+			.col-5.mb-3
+				.display-4 Alerts
+			.col.mb-3
+				+b.alert.alert-primary(role='alert')
+
+					| A simple primary alert—check it out!
+					+e.close--js
+						+icon("close")
+				+b.alert.alert-secondary(role='alert')
+					| A simple secondary alert—check it out!
+					+e.close--js
+						+icon("close")
+				+b.alert.alert-success(role='alert')
+					+icon("success")
+					| A simple success alert—check it out!
+					+e.close--js
+						+icon("close")
+				+b.alert.alert-danger(role='alert')
+					+icon("danger")
+					| A simple danger alert—check it out!
+					+e.close--js
+						+icon("close")
+				+b.alert.alert-warning(role='alert')
+					+icon("bell")
+					| A simple warning alert—check it out!
+					+e.close--js
+						+icon("close")
+				+b.alert.alert-info(role='alert')
+					| A simple info alert—check it out!
+					+e.close--js
+						+icon("close")
+				+b.alert.alert-dark(role='alert')
+					| A simple dark alert—check it out!
+					+e.close--js
+						+icon("close")

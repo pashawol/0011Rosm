@@ -256,7 +256,11 @@ function eventHandler() {
 	});
 	// modal window
 
-	
+	$(function () {
+		$('[data-toggle="popover"]').popover({
+			trigger: 'hover'
+		})
+	})
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

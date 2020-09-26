@@ -9,10 +9,11 @@
 				margin-right: calc(var(--asideW) - 15px);
 			}
 		overflow-x: auto;
+		overflow-y: hidden; 
 		
 		.row{
 			// --bs-gutter-x: 12px;
-			@include roww(10px);
+			@include roww(8px);
 		}
 		&__inner{ 
 			min-width: rem(830);
@@ -47,9 +48,9 @@
 			}
 		}
 		&__th{
-			font-size: rem(10);
-			padding-top: rem(15);
-			padding-bottom: rem(15);
+			font-size: rem(12);
+			padding-top: rem(12);
+			padding-bottom: rem(13);
 		}
 		&__td{
 			position: relative;

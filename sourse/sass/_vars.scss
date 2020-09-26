@@ -722,9 +722,9 @@ $form-feedback-icon-invalid:        '' !default;
 // $popover-bg:                        $white !default;
 // $popover-max-width:                 276px !default;
 // // $popover-border-width:              $border-width !default;
-// $popover-border-color:              rgba($black, .2) !default;
+$popover-border-color:              transparent !default;
 // // $popover-border-radius:             $border-radius-lg !default;
-// $popover-box-shadow:                0 .25rem .5rem rgba($black, .2) !default;
+$popover-box-shadow: 0px 14px 20px #BDC1C1 !default;
 
 // $popover-header-bg:                 darken($popover-bg, 3%) !default;
 // // $popover-header-color:              $headings-color !default;
@@ -820,8 +820,8 @@ $form-feedback-icon-invalid:        '' !default;
 // // $alert-border-width:                $border-width !default;
 
 // $alert-bg-level:                    -10 !default;
-// $alert-border-level:                -9 !default;
-// $alert-color-level:                 6 !default;
+$alert-border-level:                -10!default;
+$alert-color-level:                 0 !default;
 
 
 // // Progress bars
