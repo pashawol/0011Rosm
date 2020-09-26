@@ -261,6 +261,12 @@ function eventHandler() {
 			trigger: 'hover'
 		})
 	})
+ 
+	var Sticky = new hcSticky('.sTable__head', {
+		stickTo: '.sTable__inner',
+		top: 43
+	});
+
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

@@ -3,36 +3,16 @@
 	.sTable {
 		flex-grow: 1;
 		position: relative;
-		
-			@include media-breakpoint-up(lg){
-
-				margin-right: calc(var(--asideW) - 15px);
-			}
-		overflow-x: auto;
-		overflow-y: hidden; 
-		
-		.row{
-			// --bs-gutter-x: 12px;
-			@include roww(8px);
-		}
-		&__inner{ 
-			min-width: rem(830);
-			
-		}
-		&__body{ 
-			padding-top: rem(16);
-			padding-right: 30px;
-	p {
-		margin-bottom: rem(10);
-	}
-		}
+		// overflow-x: auto;
+		overflow-y: hidden;
 		&__head{
-			padding-right: 30px;
+			padding-right: 20px;
 			position: sticky;
 			top: 0;
 			left: 0;
 			background-color: #ffffff;
 			z-index: 200;
+			// top: rem(43);
 			// position: relative;
 			&::before{
 				content: '';
@@ -44,8 +24,28 @@
 				height: 1px;
 				background-color:   #495057;
 				bottom: 0;
-
+		
 			}
+		} 
+			@include media-breakpoint-up(lg){ 
+				margin-right: calc(var(--asideW) - 5px);
+			}
+
+		
+		.row{
+			// --bs-gutter-x: 12px;
+			@include roww(8px);
+		}
+		&__inner{ 
+			min-width: rem(830);
+			
+		}
+		&__body{ 
+			padding-top: rem(16);
+			padding-right: 20px;
+	p {
+		margin-bottom: rem(10);
+	}
 		}
 		&__th{
 			font-size: rem(12);
