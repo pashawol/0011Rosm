@@ -51,6 +51,10 @@ mixin sTable()
 						+td('150','Ч.')
 						+td('','Р.')(class="is-invalid")
 							+b.form-group-alert(data-toggle="popover"    data-placement="auto" data-content="Эти данные не соответсвуют отчету № 125 от 18.08.2020") i 
+			+e.group-tr.py-0
+				+e.row.row
+					- for (var x = 0; x < 6; x++)
+						+e.td.col.col-top.pb-0
 			+e.group-tr
 				p.strong  1. Вовлеченность молодежи в инновационную деятельность и научно-техническое творчество
 			
@@ -64,12 +68,12 @@ mixin sTable()
 				+tr("2. Биомедицина")
 				+e.tr--total.strong.small
 					.row
-						.col 15 000 000 р.
-						.col 5 000 000 р.
-						.col 10 шт.
-						.col 12 000 000 р.
-						.col 12 500 чел.
-						.col 150
+						.col.col--hover 15 000 000 р.
+						.col.col--hover 5 000 000 р.
+						.col.col--hover 10 шт.
+						.col.col--hover 12 000 000 р.
+						.col.col--hover 12 500 чел.
+						.col.col--hover 150
 			+e.group-tr
 				p.strong  8. Социализация молодежи, нуждающейся в особой помощи
 				+tr()

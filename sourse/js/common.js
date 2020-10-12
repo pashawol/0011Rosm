@@ -267,6 +267,30 @@ function eventHandler() {
 		top: 43
 	});
 
+	// let thHover = $(".sTable__th");
+	let thHover = $(".sTable__th, .sTable__td, .col--hover");
+	thHover.hover(function () {
+		let index = $(this).index();
+		console.log(index);
+		$(this).addClass('bg-hover')
+		thHover.each(function () {
+			if ($(this).index() == index) {
+
+				$(this).addClass('bg-hover')
+			}
+		})
+	},
+		function () {
+			let index = $(this).index(); 
+			$(this).removeClass('bg-hover')
+			thHover.each(function () {
+				if ($(this).index() == index) {
+
+					$(this).removeClass('bg-hover')
+				}
+			})
+		}
+	)
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

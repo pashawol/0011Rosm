@@ -263,6 +263,26 @@ function eventHandler() {
 	var Sticky = new hcSticky('.sTable__head', {
 		stickTo: '.sTable__inner',
 		top: 43
+	}); // let thHover = $(".sTable__th");
+
+	var thHover = $(".sTable__th, .sTable__td, .col--hover");
+	thHover.hover(function () {
+		var index = $(this).index();
+		console.log(index);
+		$(this).addClass('bg-hover');
+		thHover.each(function () {
+			if ($(this).index() == index) {
+				$(this).addClass('bg-hover');
+			}
+		});
+	}, function () {
+		var index = $(this).index();
+		$(this).removeClass('bg-hover');
+		thHover.each(function () {
+			if ($(this).index() == index) {
+				$(this).removeClass('bg-hover');
+			}
+		});
 	});
 }
 
