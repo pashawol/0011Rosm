@@ -112,6 +112,8 @@
 }
 .sTable-btn {
 	@extend .btn; 
+	position: relative;
+	z-index: 5;
 	// @extend .btn-block;
 	@include media-breakpoint-up(lg) {
 
