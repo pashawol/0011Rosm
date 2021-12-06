@@ -56,6 +56,12 @@
 		&--row{
 			@include roww(rem(10));
 			flex-wrap: wrap;
+			margin-left: calc(-1 / 2 * var(--bs-gutter-x)) !important;
+    margin-right: calc(-1 / 2 * var(--bs-gutter-x)) !important;
+		width: calc(100% + var(--bs-gutter-x));
+
+
+
 		}
 	}
 	&__item{
