@@ -50,9 +50,18 @@
 	list-style: none;
 	margin-bottom: 0;
 	padding-bottom: 0;
+	margin-top: rem(-8);
+	@include media-breakpoint-up(md) {
+
+		&--row{
+			@include roww(rem(10));
+			flex-wrap: wrap;
+		}
+	}
 	&__item{
 
 		width: auto;
+		margin-top: rem(8);
 	}
 	&__link{
 		font-size: rem(14);

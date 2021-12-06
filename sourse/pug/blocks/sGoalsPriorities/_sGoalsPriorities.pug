@@ -1,0 +1,34 @@
+mixin sGoalsPriorities(data)
+	// start sGoalsPriorities
+	+b.sGoalsPriorities
+		mixin item(n,t)
+			+b.card-item
+				+e.head
+					+e.number.text-success= n
+					.h3.strong= t
+					p Ответственные: #[strong Росмолодежь; Управление молодежных проектов и программ]
+				+e.body
+					block
+				+e.footer
+					+input("",'textarea','Комментарий администратора')
+		+item('1.1','Брендирование сайта РОИВа в соответствии с макетами национального проекта')
+			+e.line
+				.row
+					.col
+						p Наличие раздела и&nbsp;актуальной информации о&nbsp;национальных целях и&nbsp;приоритетах (ссылка на&nbsp;раздел)
+					+e.input-col.col-sm-auto
+						+input('0').text-right 
+		+item('1.2','Количество опубликованных постов по реализации национального проекта «Образование»')
+		+item('1.3','Всероссийский конкурс лучших региональных практик поддержки волонтерства «Регион добрых дел»')
+			+e.line
+				.row
+					.col
+						p Проведение регионального этапа
+					.col-sm-auto
+						+b.LABEL.yesno
+							input(type="checkbox")
+							+e.SPAN.text  Да
+							+e.SPAN.text Нет
+
+		+item('1.4','Форум молодых деятелей культуры и искусств «Таврида»')
+	// end sGoalsPriorities

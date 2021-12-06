@@ -22,6 +22,9 @@ mixin top-nav()
 	// start top-nav
 	+b.top-nav.block-with-lazy
 		.container-fluid
-			+mnu()
+			if block
+				block
+			else
+				+mnu()
 					
 	// end top-nav

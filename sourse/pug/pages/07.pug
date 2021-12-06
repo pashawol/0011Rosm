@@ -1,0 +1,43 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sStartSection/_sStartSection.pug
+include ../blocks/sTable/_sTable.pug
+include ../blocks/sAside/_sAside.pug
+include ../blocks/sGoalsPriorities/_sGoalsPriorities.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'СКП 2021'
+	title= title
+block pagecontent
+	+topLine('t')
+	+top-nav()
+		-
+			var nav2= {  
+				"Нормативно-правовой блок":"#", 
+				"Финансово-экономический блок":"#", 
+				"Организационно-управленческий блок":"#", 
+				"Информационный и научно-аналитический блок":"#", 
+				"Кадровый блок":"#", 
+				"Критерии, относящиеся к направлению по текущему году":"#", 
+				"Повышающий коэффициент":"#", 
+				}
+		.nav-slider.swiper-container
+			+b.UL.navMenu--row.swiper-wrapper
+				+e.LI.item.swiper-slide: +e.A.link.active(href="#" itemprop="url") Национальные цели и приоритеты
+				each linkPatch, linkName in nav2
+					+e.LI.item.swiper-slide: +e.A.link(href="#" itemprop="url")= linkName
+	.main-block
+		.container-fluid
+			.pt-5
+				h1.h2.strong Национальные цели и приоритеты
+			+sGoalsPriorities
+			//- +sAside6
+	+footer()
+
+
+	
