@@ -19,7 +19,7 @@
 		margin: rem(66) 0 rem(40);
 	}
 	&__btn{
-		width: 100%;
+		width: 10rem;
 	}
 } // end.sGoalsPriorities
 
@@ -124,6 +124,6 @@
 	input:checked + &__text{
 		--pos:100%;
 	}
-
+	
 }
 
