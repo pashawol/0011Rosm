@@ -1,21 +1,23 @@
-// создание блока набрать node block name
 'use strict';
 
-const fs = require('fs')
-const path = require('path')
-const colors = require('colors')
-const readline = require('readline')
+import  fs from 'fs'
+import  colors from 'colors'
+import  readline from 'readline'
+// import { fileURLToPath } from 'url'
+import path  from 'path'
 
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = dirname(__filename);
 const rl = readline.createInterface(process.stdin, process.stdout);
 
 // folder with all blocks
-const BLOCKS_DIR = path.join(__dirname, 'sourse/pug/blocks');
+const BLOCKS_DIR = path.join('sourse/pug/blocks');
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
 // default content for files in new block
 const fileSources = {
-	pug: `mixin {blockName}()
+	pug: `mixin {blockName}(data)
 	// start {blockName}
 	+b.SECTION.{blockName}.section#{blockName}&attributes(attributes)
 		.container
@@ -24,19 +26,18 @@ const fileSources = {
 				
 			.row
 	// end {blockName}`,
-	scss: `
-	// start .{blockName}
-	.{blockName} \{
-		 
+	scss: `// start .{blockName}
+.{blockName} \{
+		// --sPT: ;
+		// --sPB: ;
+		// --sTPB: ;
+
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
 	@include media-breakpoint-up(sm) {}
-	//
-	@include media-breakpoint-between(md, xl) { }
-	//
+	@include media-breakpoint-between(md, xl) {}
 	@include media-breakpoint-only(xl) {}
-	//
 	@include media-breakpoint-down(xl) {}
 } // end.{blockName}`
 	,
@@ -50,7 +51,7 @@ const fileSources = {
 	// 	 created: function () { 
 	// 	},
 	// 	computed: {
-		
+
 	// 	},
 	// })`
 };
