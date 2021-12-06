@@ -17,6 +17,7 @@
 	counter-reset: num;
 } // end.sGoalsPriorities
 
+
 .card-item{
 	margin-bottom: rem(32);
 	padding-bottom: rem(32);
@@ -48,6 +49,24 @@
 		&:not(:first-child){
 			border-top: 1px solid #EAEEEF;
 			padding-top: rem(16);
+		}
+	}
+	&__points{
+		font-weight: bold;
+		display: flex;
+		margin-top: rem(32);
+		margin-bottom: rem(32);
+		&::before{
+			content: 'a';
+			font-size: inherit;
+			font-weight: bold;
+			margin-right: rem(16);
+			color: #CE3A3A;
+		}
+	}
+	.textarea-comment{
+		.card-item__input{
+			margin-top: rem(16);
 		}
 	}
 }
@@ -101,3 +120,4 @@
 	}
 
 }
+

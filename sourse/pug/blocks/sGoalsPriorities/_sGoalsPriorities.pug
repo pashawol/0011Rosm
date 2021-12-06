@@ -10,18 +10,24 @@ mixin sGoalsPriorities(data)
 				+e.body
 					block
 				+e.footer
-					+input("",'textarea','Комментарий администратора')
+					+input("0",'textarea','Комментарий администратора')
 		+item('1.1','Брендирование сайта РОИВа в соответствии с макетами национального проекта')
 			+e.line
-				.row
+				.row.align-items-center
 					.col
 						p Наличие раздела и&nbsp;актуальной информации о&nbsp;национальных целях и&nbsp;приоритетах (ссылка на&nbsp;раздел)
 					+e.input-col.col-sm-auto
 						+input('0').text-right 
 		+item('1.2','Количество опубликованных постов по реализации национального проекта «Образование»')
+			+e.line
+				.row.align-items-center
+					.col
+						p Количество опубликованных&nbsp;постов (данные&nbsp;из&nbsp;отчета Росмолодежи)
+					+e.input-col.col-sm-auto
+						+input('0').text-right
 		+item('1.3','Всероссийский конкурс лучших региональных практик поддержки волонтерства «Регион добрых дел»')
 			+e.line
-				.row
+				.row.align-items-center
 					.col
 						p Проведение регионального этапа
 					.col-sm-auto
@@ -29,6 +35,124 @@ mixin sGoalsPriorities(data)
 							input(type="checkbox")
 							+e.SPAN.text  Да
 							+e.SPAN.text Нет
-
 		+item('1.4','Форум молодых деятелей культуры и искусств «Таврида»')
+			+e.line
+				.row.align-items-center
+					.col
+						p Рекомендованное количество&nbsp;участников от&nbsp;региона на мероприятии
+					+e.input-col.col-sm-auto
+						+input('0').text-right
+			+e.line
+				.row.align-items-center
+					.col
+						p Количество присутствующих на&nbsp;форуме
+					+e.input-col.col-sm-auto
+						+input('0').text-right
+			+e.line
+				.row.align-items-center
+					.col
+						p Количество присутствующих&nbsp;волонтеров на&nbsp;форуме
+					+e.input-col.col-sm-auto
+						+input('0').text-right
+		+item('1.5','Фестиваль творческих сообществ «Таврида – АРТ»')
+			+e.line
+				.row.align-items-center
+					.col
+						p Рекомендованное количество&nbsp;участников от&nbsp;региона на мероприятии
+					+e.input-col.col-sm-auto
+						+input('0').text-right
+			+e.line
+				.row.align-items-center
+					.col
+						p Количество присутствующих на&nbsp;форуме
+					+e.input-col.col-sm-auto
+						+input('0').text-right
+			+e.line
+				.row.align-items-center
+					.col
+						p Количество присутствующих&nbsp;волонтеров на&nbsp;форуме
+					+e.input-col.col-sm-auto
+						+input('0').text-right
+		+item('1.6','Итоговое событие  в рамках реализации проекта «Национальная лига студенческих клубов»')
+			+e.H4.points Региональное мероприятие НЛСК
+			+e.footer.textarea-comment
+					+input("ссылки на соц. сети и СМИ",'textarea','Проведение мероприятия')
+			+e.line
+				.row.align-items-center
+					.col
+						p Количество участников мероприятия
+					+e.input-col.col-sm-auto
+						+input('0').text-right
+			
+			+e.H4.points Всероссийское мероприятие 
+			+e.line
+				.row.align-items-center
+					.col
+						p Количество участников мероприятия
+					+e.input-col.col-sm-auto
+						+input('0').text-right
+			+e.line
+				.row.align-items-center
+					.col
+						p Рекомендованное количество участвующих от региона на&nbsp;мероприятии
+					+e.input-col.col-sm-auto
+						+input('0').text-right
+		+item('1.7','Региональные встречи в рамках проекта «Диалог на равных»')
+			+e.line
+				.row.align-items-center
+					.col
+						p Количество мероприятий согласно&nbsp;утвержденному&nbsp;плану
+					+e.input-col.col-sm-auto
+						+input('0').text-right
+			+e.line
+				.row.align-items-center
+					.col
+						p Количество студентов согласно&nbsp;утвержденному&nbsp;плану
+					+e.input-col.col-sm-auto
+						+input('0').text-right
+			+e.line
+				.row.align-items-center
+					.col
+						p Количество трансляций согласно&nbsp;утвержденному&nbsp;плану
+					+e.input-col.col-sm-auto
+						+input('0').text-right
+			+e.line
+				.row.align-items-center
+					.col
+						p Количество видео согласно&nbsp;утвержденному&nbsp;плану
+					+e.input-col.col-sm-auto
+						+input('0').text-right
+			+e.line
+				.row.align-items-center
+					.col
+						p Id мероприятия в&nbsp;АИС «Молодежь&nbsp;России»
+					+e.input-col.col-sm-auto
+						+input('0').text-right
+		+item('1.8','Окружные форумы добровольцев (online)')
+			+e.line
+				.row.align-items-center
+					.col
+						p Рекомендованное количество&nbsp;участников от&nbsp;региона на мероприятии
+					+e.input-col.col-sm-auto
+						+input('0').text-right
+			+e.line
+				.row.align-items-center
+					.col
+						p Количество присутствующих на&nbsp;форуме
+					+e.input-col.col-sm-auto
+						+input('0').text-right
+		+item('1.9','Международный форум добровольцев')
+			+e.line
+				.row.align-items-center
+					.col
+						p Рекомендованное количество&nbsp;участников от&nbsp;региона на мероприятии
+					+e.input-col.col-sm-auto
+						+input('0').text-right
+			+e.line
+				.row.align-items-center
+					.col
+						p Количество присутствующих на&nbsp;форуме
+					+e.input-col.col-sm-auto
+						+input('0').text-right
+
 	// end sGoalsPriorities
