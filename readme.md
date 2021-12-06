@@ -6,3 +6,4 @@
 1. <https://pashawol.github.io/0011Rosm/public/04.html>
 1. <https://pashawol.github.io/0011Rosm/public/05.html>
 1. <https://pashawol.github.io/0011Rosm/public/06.html>
+1. <https://pashawol.github.io/0011Rosm/public/07.html>

@@ -35,6 +35,24 @@ mixin sGoalsPriorities(data)
 							input(type="checkbox")
 							+e.SPAN.text  Да
 							+e.SPAN.text Нет
+			+e.line 
+				.row.align-items-center
+					.col
+						p Субъект финалист 
+					.col-sm-auto
+						+b.LABEL.yesno
+							input(type="checkbox")
+							+e.SPAN.text  Да
+							+e.SPAN.text Нет
+			+e.line
+				.row.align-items-center
+					.col
+						p 
+					.col-sm-auto
+						+b.LABEL.yesno
+							input(type="checkbox")
+							+e.SPAN.text  Да
+							+e.SPAN.text Нет
 		+item('1.4','Форум молодых деятелей культуры и искусств «Таврида»')
 			+e.line
 				.row.align-items-center
@@ -154,5 +172,11 @@ mixin sGoalsPriorities(data)
 						p Количество присутствующих на&nbsp;форуме
 					+e.input-col.col-sm-auto
 						+input('0').text-right
+		+e.btn-wrap
+			.row.justify-content-between
+				.col-2
+					+e.A.btn.btn.btn-outline-success Назад
+				.col-2
+					+e.A.btn.btn.btn-success Далее
 
 	// end sGoalsPriorities
