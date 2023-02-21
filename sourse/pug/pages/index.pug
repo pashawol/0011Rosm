@@ -6,12 +6,13 @@ include ../blocks/sContact/_sContact.pug
 include ../blocks/sStartSection/_sStartSection.pug
 
 block variables
-	- let  mainPage= 'bg-success'
+	- let  mainPage= 'bg-success bg-success-new'
 block title
 	- let  title= 'Форма M1'
 	title= title
+	
 block pagecontent
-	+topLine()
+	+topLine('','svg')
 	+sStartSection
 	+footer()
 

@@ -2,21 +2,37 @@ mixin sStartSection()
 	// start sStartSection
 	+b.MAIN.sStartSection.section#sStartSection&attributes(attributes) 
 		.container 
-			.row
-				+e.col.col.d-flex.flex-column
-					+e.text-block.text-white.mb-auto
-						h1.strong Форма M1
-						p Форма федерального статистического наблюдения N&nbsp;1-молодежь &laquo;Сведения о&nbsp;сфере государственной молодежной политики&raquo;
-					div
-						img(src="img/svg/logo-text.svg" loading="lazy", alt="")
-				+e.col.col-md-auto
-					+form-wrap
-						+e.body
-							.h3.strong.pb-2 Вход в&nbsp;систему
-							+input("Логин")
-							+input("Пароль")
-							+e.btn.btn-success(type="submit") Войти
-						+e.footer.small #[a.strong.text-body(href="#") Не знаете как войти?] Получите данные у администратора системы
+
+				+e.col
+					.form-wrap.tabs
+						.tabs__caption
+							.tabs__btn.active Вход для сотрудника
+							.tabs__btn Вход для организации
+						.tabs__wrap
+							.tabs__content.active 
+								form#w0(action='/site/org-login' method='post')
+									input(name='_csrf' type='hidden' value='1ijJa7VsTa4crdIj1dozF0qaiDW9Rlucvzl6aDyuIEjlX6wg7zV62XHF5GCarwt-BcjwQ-0OAv_UVz4GX8BYDQ==' wfd-id='id0')
+									.form-group.field-employerloginform-email.required.has-error
+										//- label.control-label(for='employerloginform-email') E-mail
+										input#employerloginform-email.form-control(name='EmployerLoginForm[email]' type='text' aria-invalid='true' aria-required='true' wfd-id='id1' placeholder="E-mail")
+										.help-block Значение «E-mail» не является правильным email адресом. 
+									.form-group.field-employerloginform-password.required
+										//- label.control-label(for='employerloginform-password') Пароль
+										input#employerloginform-password.form-control(name='EmployerLoginForm[password]' type='text' aria-required='true' wfd-id='id2'  placeholder="Пароль")
+										.help-block 
+									button.form-wrap__btn.btn-success(type='submit') Войти
+								
+							.tabs__content
+								form#w1(action='/site/org-login' method='post')
+									input(name='_csrf' type='hidden' value='1ijJa7VsTa4crdIj1dozF0qaiDW9Rlucvzl6aDyuIEjlX6wg7zV62XHF5GCarwt-BcjwQ-0OAv_UVz4GX8BYDQ==' wfd-id='id3')
+									.form-group.field-organizationloginform-inn.required 
+										input#organizationloginform-inn.form-control(name='OrganizationLoginForm[inn]' type='text' aria-required='true' wfd-id='id4' placeholder='ИНН')
+										.help-block
+									.form-group.field-organizationloginform-password.required 
+										input#organizationloginform-password.form-control(name='OrganizationLoginForm[password]' type='text' aria-required='true' wfd-id='id5'  placeholder='Пароль')
+										.help-block 
+									button.form-wrap__btn.btn-success(type='submit') Войти
+
 	// end sStartSection
 mixin sStartSection1(t='Начните заполнение данных в форме М1')
 	// start sStartSection
